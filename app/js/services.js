@@ -9,7 +9,7 @@ angular.module('myApp.services', []).
   value('version', '0.1');
 
 
-angular.factory('BomberMap', function() {
+app.factory('BomberMap', function() {
     var TILE_EMPTY = 0,
         TILE_SOLID = 1,
         TILE_BRICK = 2;
@@ -17,8 +17,6 @@ angular.factory('BomberMap', function() {
     var mapHeight = 40,
         mapWidth = 30,
         map = null;
-
-
 
     function initializeMap( opt ) {
         var m =  mapHeight * mapWidth;
@@ -59,33 +57,9 @@ angular.factory('BomberMap', function() {
         map[ y * mapHeight + x ] = tileType;
     }
 
-    // -1 - wall
-    // 0 - empty
-    // 1 - brick
-    // 2 - start position of bot
-
-    var bomberMap1 = [
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    ];
-
-    bomberMaps.push(bomberMap1);
-
     return {
         isWall : function( x, y ) {
             var result = false;
-
-            if ( currentMap ) {
-
-            }
 
             return result;
         }
