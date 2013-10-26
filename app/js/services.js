@@ -9,21 +9,23 @@ angular.module('myApp.services', []).
   value('version', '0.1');
 
 
-app.factory('BomberMap', function() {
+app.factory('bomberMap', function() {
     var TILE_EMPTY = 0,
         TILE_SOLID = 1,
-        TILE_BRICK = 2;
+        TILE_BRICK = 2,
+        TILE_SOLID_CLASS = "solid",
+        TILE_BRICK_CLASS = "brick";
 
     var mapHeight = 40,
         mapWidth = 30,
         map = null;
 
-    function initializeMap( opt ) {
+    function initializeMap() {
         var m =  mapHeight * mapWidth;
         map = new Array(m);
 
         for ( var i=0; i < m; i++ ) {
-            map[i] = TILE_EMPTY;
+            map[i] = { value : TILE_EMPTY, htmlClass : "" };
         }
 
         classicMapGenerator();
@@ -35,10 +37,10 @@ app.factory('BomberMap', function() {
         for ( var i=0; i<mapWidth; i++ ) {
             for ( var j=0; j<mapHeight; j++ ) {
                 if ( i%2 == 0 && j%2 == 0 ) {
-                    setMapTile( i, j, TILE_SOLID );
+                    setMapTile( i, j, { value : TILE_SOLID, htmlClass : TILE_SOLID_CLASS } );
 
                 } else if ( Math.floor( Math.random()*9 ) == 0 ) {
-                    setMapTile( i, j, TILE_BRICK );
+                    setMapTile( i, j, { value : TILE_BRICK, htmlClass : TILE_BRICK_CLASS } );
                 }
             }
         }
@@ -46,9 +48,10 @@ app.factory('BomberMap', function() {
 
     function borderedMapGenerator() {
         for(var i=0; i<mapWidth; i++) {
-            for(var j=0; j<mapHeight; j++) {
-                if (i==0 || i==mapWidth-1 || j==0 || j==mapHeight-1)
-                    setMapTile(i,j, TILE_SOLID);
+            for( var j=0; j<mapHeight; j++ ) {
+                if ( i == 0 || i == mapWidth-1 || j==0 || j == mapHeight-1 ) {
+                    setMapTile( i, j, { value : TILE_SOLID, htmlClass : TILE_SOLID_CLASS });
+                }
             }
         }
     }
@@ -57,12 +60,12 @@ app.factory('BomberMap', function() {
         map[ y * mapHeight + x ] = tileType;
     }
 
+    function getMap() {
+        initializeMap();
+        return map;
+    }
+
     return {
-        isWall : function( x, y ) {
-            var result = false;
-
-            return result;
-        }
-
+        getMap : getMap
     };
 });

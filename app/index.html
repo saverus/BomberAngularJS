@@ -7,6 +7,13 @@
 </head>
 
   <div class="gamme-container">
+      <div ng-controller="MapController" class="grid">
+          <ul class="test">
+              <li ng-repeat="mapItem in bomberMap track by $index">
+                  <div class="{{mapItem.htmlClass}}"></div>
+              </li>
+          </ul>
+      </div>
       <ng-view></ng-view>
   </div><!-- /end .gamme-container -->
 
@@ -20,5 +27,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="js/MapController.js"></script>
 </body>
 </html>
