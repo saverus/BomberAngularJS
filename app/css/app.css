@@ -162,5 +162,24 @@ BODY {
     font-weight: bold;
     }
 
+.test LI {
+    width: 20px;
+    height: 20px;
+    float: left;
+    list-style: none;
+}
+
+.test LI.solid {
+    background: gray;
+}
+
+.test LI.brick {
+    background: orange;
+}
+
+
+
+
+
 
 

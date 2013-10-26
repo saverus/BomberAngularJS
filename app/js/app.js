@@ -13,7 +13,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider
       .when('/',
         { templateUrl: 'partials/start-page.html',
-          controller:  'startCtrl'
+          controller:  ''
         })
       .when('/login-page',
         { templateUrl: 'partials/login-page.html',
@@ -21,7 +21,7 @@ config(['$routeProvider', function($routeProvider) {
         })
       .when('/bomber-page',
         { templateUrl: 'partials/bomber.html',
-          controller:  'bomberCtrl'
+          controller:  ''
         })
       .otherwise({redirectTo: '/'});
 }]);

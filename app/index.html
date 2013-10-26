@@ -8,14 +8,9 @@
 
   <a href="#/" class="home">Home</a>
 
+<a href="#/bomber-page" class="home">Map</a>
+
   <div class="gamme-container">
-      <div ng-controller="MapController" class="grid">
-          <ul class="test">
-              <li ng-repeat="mapItem in bomberMap track by $index">
-                  <div class="{{mapItem.htmlClass}}"></div>
-              </li>
-          </ul>
-      </div>
       <ng-view></ng-view>
   </div><!-- /end .gamme-container -->
 
