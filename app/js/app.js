@@ -2,12 +2,12 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+var app = angular.module('myApp', [
+                                    'ngRoute',
+                                    'myApp.filters',
+                                    'myApp.services',
+                                    'myApp.directives',
+                                    'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -19,9 +19,16 @@ config(['$routeProvider', function($routeProvider) {
         { templateUrl: 'partials/login-page.html',
           controller:  'loginPageCtrl'
         })
-      .when('/login-page',
+      .when('/bomber-page',
         { templateUrl: 'partials/bomber.html',
           controller:  'bomberCtrl'
         })
       .otherwise({redirectTo: '/'});
 }]);
+
+app.controller('startCtrl', function($scope, $location) {
+    $scope.goToLoginPage = function() {
+        $location.path('/login-page');
+    };
+});
+

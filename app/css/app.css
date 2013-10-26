@@ -1,30 +1,68 @@
-/* app css stylesheet */
+HTML {
+    background-color: #7F1F19;
+    background-image: url(../img/lego-bot2.png),
+                      url(../img/lego-bot1.png),
+                      url(../img/lego-bg2.png),
+                      url(../img/lego-bg1.jpg);
+    background-size: auto, auto, auto;
+    padding: 0;
+    margin: 0;
+    height: 1200px;
+    width: 8000px;
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
+    opacity: .7;
+    }
 
-.menu:before {
-  content: "[";
-}
+BODY {
+    background-image: url(../img/lego-mids2.png),
+                      url(../img/lego-mids1.png),
+                      url(../img/lego-heads-2.png),
+                      url(../img/lego-headsb.png);
+    background-size: auto, auto, auto;
+    padding: 0;
+    margin: 0;
+    height: 1200px;
+    width: 8000px;
+    }
 
-.menu:after {
-  content: "]";
-}
 
-.menu > li {
-  display: inline;
-}
+.gamme-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
+    width: 800px;
+    height: 600px;
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    background-clip: padding-box;
+    }
+
+.form-container {
+    width: 800px;
+    height: 600px;
+
+    background: url("../img/login-page-bg.jpg") no-repeat;
+    background-size: 100% auto;
+    }
+
+.login-form {
+
+    }
+
+.login-form > INPUT {
+
+    }
+
+.login-btn {
+
+    }
+
+.start-btn {
+
+    }
