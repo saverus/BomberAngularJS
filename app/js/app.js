@@ -25,10 +25,15 @@ config(['$routeProvider', function($routeProvider) {
         })
       .otherwise({redirectTo: '/'});
 }]);
+app.controller('loginPageCtrl', function($scope, $location) {
+    $scope.users = [];
+    $scope.person = {name: ''};
 
-app.controller('startCtrl', function($scope, $location) {
-    $scope.goToLoginPage = function() {
-        $location.path('/login-page');
-    };
+    $scope.addUser = function() {
+        $scope.users.push($scope.person);
+    }
+
+    console.log($scope.users);
 });
+
 

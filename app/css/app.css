@@ -43,7 +43,20 @@ BODY {
     background-clip: padding-box;
     }
 
+.start {
+    width: 800px;
+    height: 600px;
+
+    background: url("../img/start-bg.jpg") no-repeat;
+    background-size: cover;
+    }
+
+.start-btn {
+
+    }
+
 .form-container {
+    padding: 50px;
     width: 800px;
     height: 600px;
 
@@ -52,7 +65,13 @@ BODY {
     }
 
 .login-form {
-
+    padding: 50px;
+    width: 215px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    background-clip: padding-box;
     }
 
 .login-form > INPUT {
@@ -60,9 +79,88 @@ BODY {
     }
 
 .login-btn {
-
+    cursor: pointer;
     }
 
-.start-btn {
-
+.a-btn{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 300px 0 0 100px;
+    float: left;
+    background: #f0ad4e;
+    position: relative;
+    box-shadow:
+        0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset,
+        0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset,
+        0px 0px 0px 7px #fff,
+        0px 0px 1px 8px rgba(188, 188, 188, 0.4),
+        0px 0px 0px 9px #fff;
+    transition: all 0.3s linear;
+    text-decoration: none;
     }
+
+.a-btn span {
+    display: table-cell;
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 26px;
+    color: orange;
+    text-shadow: 0px 1px 1px #A03F16;
+    font-family: "Arvo", "Myriad Pro", "Trebuchet MS", sans-serif;
+    transition: all 0.3s linear;
+    }
+
+.a-btn span{
+    background: transparent url("../img/star.png") no-repeat center center;
+    opacity: 0.7;
+    }
+
+.a-btn:hover{
+    background: rgba(170, 77, 27, 0.6);
+    box-shadow:
+        0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset,
+        0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset,
+        0px 0px 0px 7px #fff,
+        1px 4px 5px 8px rgba(188, 188, 188, 0.6),
+        0px 0px 0px 9px #fff;
+    }
+
+.a-btn:hover span {
+    color: #444;
+    }
+
+.a-btn:active{
+    box-shadow:
+        0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset,
+        0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset,
+        0px 0px 0px 7px #fff,
+        0px -1px 0px 8px rgba(188, 188, 188, 0.3),
+        0px 0px 0px 10px #fff;
+    }
+
+.a-btn:active span{
+    color: rgba(170, 77, 27, 0.8);
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+    }
+
+.home {
+    display: table-cell;
+    width: 70px;
+    height: 70px;
+
+    color: #000;
+    border-radius: 50%;
+    background: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    }
+
+
+

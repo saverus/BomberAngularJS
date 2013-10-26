@@ -1,6 +1,6 @@
 <div class="form-container">
     <form class="login-form" name="form">
-        <input type="text" name="name" ng-required="Enter name"/>
-        <button class="login-btn">Create user</button>
+        <input type="text" name="name" ng-required="Enter name" ng-model="person.name"/>
+        <button class="login-btn" ng-click="addUser()">Create user</button>
     </form>
 </div>
