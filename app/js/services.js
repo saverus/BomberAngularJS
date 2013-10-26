@@ -16,7 +16,7 @@ angular.factory('BomberMap', function() {
 
     var mapHeight = 40,
         mapWidth = 30,
-        map = null,
+        map = null;
 
 
 
@@ -50,7 +50,7 @@ angular.factory('BomberMap', function() {
         for(var i=0; i<mapWidth; i++) {
             for(var j=0; j<mapHeight; j++) {
                 if (i==0 || i==mapWidth-1 || j==0 || j==mapHeight-1)
-                    this.setMap(i,j, TILE_SOLID);
+                    setMapTile(i,j, TILE_SOLID);
             }
         }
     }
@@ -80,17 +80,6 @@ angular.factory('BomberMap', function() {
     bomberMaps.push(bomberMap1);
 
     return {
-        setCurrentBomberMap : function( mapIndex ) {
-            var result = false;
-            if ( bomberMaps[mapIndex] ) {
-                currentMap = bomberMaps[mapIndex];
-                result = true;
-            }
-            return result;
-        },
-        generateSpecialBonusesForBricks() {
-
-        }
         isWall : function( x, y ) {
             var result = false;
 
@@ -99,9 +88,7 @@ angular.factory('BomberMap', function() {
             }
 
             return result;
-        },
-
-    }
+        }
 
     };
 });
