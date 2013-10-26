@@ -56,6 +56,10 @@ app.factory('bomberMap', function() {
         }
     }
 
+    function getMapTile( x, y ) {
+        return map[ y * mapHeight + x ];
+    }
+
     function setMapTile( x, y, tileType ) {
         map[ y * mapHeight + x ] = tileType;
     }
@@ -64,6 +68,33 @@ app.factory('bomberMap', function() {
         initializeMap();
         return map;
     }
+
+    function getValidSpawnLocation() {
+        var valid = false;
+        do {
+            var x = Math.floor(Math.random()*mapWidth),
+                y = Math.floor(Math.random()*mapHeight);
+
+            console.log("trying to spawn at " + x + "," + y);
+
+            if ( getMapTile( x,y ) != TILE_SOLID ) {
+                valid = true;
+
+                // clear room
+                for(var i=-2; i<=2; i++)
+                    for(var j=-2; j<=2; j++)
+                        if ( getMapTile(x+i, y+j) == TILE_BRICK ) {
+                            setMapTile(x+i, y+j, { value : TILE_EMPTY, htmlClass : "" } );
+                        }
+            }
+        } while(!valid);
+
+        return {
+            x: x,
+            y: y
+        };
+    }
+
 
     return {
         getMap : getMap
